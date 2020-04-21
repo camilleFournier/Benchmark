@@ -1,0 +1,28 @@
+.home-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home-buttons .btn {
+    margin: 1rem;
+}
+
+.home-buttons a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.home {
+    text-align: center;
+    display: block;
+    min-height: 100vh;
+}
+
+.home .intro {
+    margin: 1em;
+}
+
+.home .intro p:first-child {
+    text-align: justify;
+}

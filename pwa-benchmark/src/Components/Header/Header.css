@@ -1,0 +1,11 @@
+.header {
+    text-align: center;
+}
+
+.title {
+    flex: 1;
+}
+
+.header .MuiIconButton-colorPrimary {
+    color: white;
+}
