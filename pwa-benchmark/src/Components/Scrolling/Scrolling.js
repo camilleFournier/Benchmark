@@ -12,7 +12,7 @@ class Scrolling extends React.Component {
     listPictures: [],
     listText: [],
     showPicture: false,
-  };
+  }; 
 
   componentDidMount() {
     this.setState({ listPictures: this.listItems(), listText: this.listText() });
