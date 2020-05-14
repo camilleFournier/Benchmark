@@ -2,7 +2,7 @@ package com.example.benchmark.model;
 
 public class PictureBank {
     private int  mCurrent;
-    private int mMaxIndex = 20;
+    private int mMaxIndex = 50;
 
     public PictureBank() {
         this.reset();

@@ -14,7 +14,6 @@ export function HomeButton({ navigation }) {
 }
 
 export function ContentButton({ toggleShowPicture, showPicture }) {
-    console.log(showPicture);
     return(
         <BaseButton onPress={ toggleShowPicture } style={ styles.button }>
             <View accessible style={styles.button}>

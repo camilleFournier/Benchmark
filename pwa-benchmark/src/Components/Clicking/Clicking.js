@@ -8,18 +8,20 @@ import './Clicking.css';
 class Clicking extends React.Component {
     state = {
       index: 1,
-      maxIndex: 20,
+      nbPictures: 50,
+      nbText: 20,
       showPicture: false,
     }
 
     changeItem = () => {
-      const newIndex = ((this.state.index) % (this.state.maxIndex)) + 1;
+      const maxIndex = this.state.showPicture ? this.state.nbPictures : this.state.nbText;
+      const newIndex = ((this.state.index) % (maxIndex)) + 1;
       console.log(newIndex);
       this.setState({ index: newIndex});
     }
 
     changeContent = () => {
-      this.setState({ showPicture: !this.state.showPicture });
+      this.setState({ showPicture: !this.state.showPicture , index: 1});
     }
 
     render() {

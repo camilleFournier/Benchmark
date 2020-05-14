@@ -6,8 +6,9 @@ import LoremIpsum from './../utils/loremipsum';
 
 export default class ScrollingScreen extends React.Component {
   state = {
-    nbPictures: 20,
+    nbPictures: 50,
     listData: [],
+    nbItems: LoremIpsum.length,
     showPicture: false,
   };
 
@@ -21,18 +22,20 @@ export default class ScrollingScreen extends React.Component {
     });
   }
 
-  listItems() {
+  listItems(showPicture) {
     const list= [];
-    const length = this.state.showPicture ? this.state.nbPictures : LoremIpsum.length;
+    const length = showPicture ? this.state.nbPictures : LoremIpsum.length;
     for (var i = 0; i < length; i++) {
       list.push({ index: i });
     };
-    this.setState({ listData: list });
+    console.log(length);
+    this.setState({ listData: list, nbItems: length });
     return list;
   }
   toggleContent = () => {
-    this.setState({ showPicture: !this.state.showPicture });
-    this.listItems();
+    const showPicture = !this.state.showPicture
+    this.setState({ showPicture });
+    this.listItems(showPicture);
   }
 
   render() {
@@ -40,8 +43,8 @@ export default class ScrollingScreen extends React.Component {
       <View>
         <FlatList
           data={this.state.listData}
-          extraData={this.state.updated}
-          renderItem={(items) => <Item picture={this.state.showPicture} index={item.index}/>}
+          extraData={this.state.nbItems}
+          renderItem={(item) => <Item picture={this.state.showPicture} index={item.item.index}/>}
           keyExtractor={(item) => `${item.index}`}/>
       </View>
     )

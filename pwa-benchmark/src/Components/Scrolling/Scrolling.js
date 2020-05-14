@@ -8,7 +8,7 @@ import './Scrolling.css';
 
 class Scrolling extends React.Component {
   state = {
-    nbPictures: 20,
+    nbPictures: 50,
     listPictures: [],
     listText: [],
     showPicture: false,

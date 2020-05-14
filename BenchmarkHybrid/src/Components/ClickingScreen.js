@@ -7,7 +7,8 @@ import { HomeButton, ContentButton } from './HeaderOptions';
 export default class ClickingScreen extends React.Component {
   state={
     index: 0,
-    maxIndex: 20,
+    maxIndexText: 20,
+    maxIndexPicture: 50,
     showPicture: false,
   }
 
@@ -22,13 +23,14 @@ export default class ClickingScreen extends React.Component {
   }
 
   nextItem = () => {
-    const newIndex = ((this.state.index + 1) % (this.state.maxIndex));
+    const maxIndex = this.state.showPicture ? this.state.maxIndexPicture : this.state.maxIndexText;
+    const newIndex = ((this.state.index + 1) % maxIndex);
     console.log(newIndex);
     this.setState({ index: newIndex });
   }
 
   toggleContent = () => {
-    this.setState({ showPicture: !this.state.showPicture })
+    this.setState({ showPicture: !this.state.showPicture });
   }
   render() {
     return (
